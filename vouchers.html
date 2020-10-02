@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GetMedia Home</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Google Fonts link -->
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<!--styling-->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="navstyle.css">
+<!--Font awesome -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+<body>
+  <div id="container">
+<header class="header">
+  <img src="images/getMediaLogo.png" class="logo" alt="logo">
+  <input class="menu-btn" type="checkbox" id="menu-btn"/>
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="search.html">SEARCH</a></li>
+    <li><a href="vouchers.html">VOUCHERS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+</header>
+<main id="vouchers-main">
+	<div id="vouchers-imgs">
+		<h1>Vouchers available to buy:</h1>
+		<div>
+			<img src="images/itunes.png" alt="iTunes Logo">
+			<p class="pounds">£5</p>
+			<p>iTunes Voucher</p>
+		</div>
+		<div>
+			<img src="images/itunes.png" alt="iTunes Logo">
+			<p class="pounds">£10</p>
+			<p>iTunes Voucher</p>
+		</div>
+		<div>
+			<img src="images/itunes.png" alt="iTunes Logo">
+			<p class="pounds">£15</p>
+			<p>iTunes Voucher</p>
+		</div>
+	</div>
+	<div id="vouchers-form">
+		<h1 id="form-h1">Fill in the form to get them!:</h1>
+		<div id="amount-confirmation"></div>
+		<form id="form">
+			<div>
+				<div id="amount-box">
+				<p>Voucher Amount:</p>
+				<input type="checkbox" id="five" class="check-amount" name="five">
+				<label for="five" class="check-label">£5</label>
+
+				<input type="checkbox" id="ten" class="check-amount" name="ten">
+				<label for="ten" class="check-label">£10</label>
+					
+				<input type="checkbox" id="fifteen" class="check-amount" name="fifteen">
+				<label for="fifteen" class="check-label">£15</label>
+
+				<br>
+				</div>
+				
+				<input type="text" id="firstName" name="firstName" 	placeholder="First Name" class="shorter-input" required>
+				
+				<input type="text" id="lastName" name="lastName" placeholder="Last Name" class="shorter-input" required>
+				<br>
+				
+				<input type="email" id="email" name="email" placeholder="Email Address" class="longer-input" required>
+				<br>
+				
+				<input type="text" id="streetline1" name="streetline1" placeholder="Street Line 1"  class="longer-input" required>
+				<br>
+			
+				<input type="text" id="streetline2" name="streetline2" placeholder="Street Line 2"  class="longer-input">
+				<br>
+				
+				
+				<input type="text" id="postcode" name="postcode" placeholder="Postcode" class="shorter-input" required>
+				<input type="text" id="city" name="city" placeholder="City" class="shorter-input" required>
+				<br>
+				
+				<input type="tel" id="phone" name="phone" placeholder="Telephone Number"  class="longer-input" pattern="[0-9]{11}">
+				<br>
+				
+				<textarea id="comments" name="comments" placeholder="Comments"  class="longer-input"></textarea>
+				
+			</div>
+			
+			<button type="submit" id="submit-form">Buy Voucher</button>
+			</form>
+	</div>
+</main>
+  <footer>
+    <div id="links-footer">
+      <a href="#"><img src="images/facebok.png" alt="facebook"></a>
+      <a href="#"><img src="images/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="images/snapchat.png" alt="snapchat"></a>
+      <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+      <p>Website for educational purposes only</p>
+    </div>
+  </footer>
+</div>
+<script src="app.js"></script>
+
+</body>
+</html>

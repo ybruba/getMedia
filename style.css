@@ -1,0 +1,588 @@
+@charset "utf-8";
+/*box-sizing prevents margin and padding altering the height and width of an element*/
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: inherit;
+}
+
+/*MAIN STRUCTURE STYLING*/
+
+/*specified the size of the font for the whole website to 10px as default so it's easier to modify them as per style guides using rem, give border-sizing of border-box, and establish the background image across the whole website.*/
+html{
+	font-size: 10px;
+	box-sizing: border-box;
+	background: url(images/laptop.jpg) no-repeat center center fixed; 
+  background-size: cover;
+}
+/*establish font for the website, and 0 margin*/
+body{
+	font-family: 'Nunito', sans-serif;
+	margin: 0;
+}
+/*display as grid to be able to position elements on screen. one column, 3 rows.*/
+#container{
+	display:grid;
+	grid-template-columns:100%;
+	grid-template-rows:75px 1fr auto;
+	grid-gap:0px;
+	height: 100vh;
+	margin: 0px auto;
+}
+/*fix header to the top, give it size, background column and position it on the grid.*/
+.header {
+  position: fixed;
+  width: 100%;
+	height:75px;
+	background-color: #ffffff;
+	grid-row:1/2;
+	grid-column:1/2;
+}
+/*position it on the grid*/
+main{
+	grid-row:2/3;
+	grid-column:1/2;
+}
+/*position it on the grid, fix it to the bottom, size and give background colour.*/
+footer{
+	position:fixed;
+	left:0;
+	bottom:0;
+	width:100%;
+	background-color: #000000;
+	grid-row:3/4;
+	grid-column:1/2;
+	height: 50px;
+}
+/*give them a maximum width for easiness of responsiveness, margin left to position and float*/
+footer img{
+	max-width: 40px;
+	margin-left: 20px;
+	float:left;
+}
+/*style with colour, size, padding and position it to the right of the screen*/
+footer p{
+	color: #a1b0b4;
+	font-size: 15px;
+	padding:20px;
+	float:right;
+}
+
+/*HOME CONTENT STYLING*/
+/*give the main text div a width, background colour with transparency and position it with margins top and left.*/
+#home-text{
+	width: 660px;
+ background-color:rgb(55,62,64, 0.6);
+ margin-top: 150px;
+ margin-left: 20px;
+}
+/*style the text with colour, size, give the font more weight (boldness) and give padding */
+#home-text p{
+	color: #ffb30f;
+	font-size: 72px;
+	font-weight: 900;
+	padding: 20px 10px;
+}
+/*style the link-button with background colour, size and margin to position. Align text to the centre and give padding top to centre text*/
+#home-link{
+	background-color: #ffb30f;
+	width: 250px;
+	height: 50px;
+	margin-left: 20px;
+	margin-top: 70px;
+	text-align:center;
+	padding-top: 5px;
+}
+/*give the link styling with font size, weight and colour, and get rid of underlining by default of link*/
+#home-link a{
+	font-size: 30px;
+	text-decoration:none;
+	color: #373e40;
+	font-weight: 900;
+}
+
+/*SEARCH PAGE STYLING*/
+#search-items{
+	text-align:center;
+}
+/*size and style the search input box*/
+#music-input{
+	display: inline-block;
+	width: 450px;
+	height: 50px;
+	margin: 20px;
+	font-family: 'nunito', sans-serif;
+	font-size: 20px;
+	color: #a1b0b4;
+	border:0;
+	padding: 5px;
+}
+
+/*size and style the search submit button*/
+#music-Submit{
+	width: 150px;
+	height: 50px;
+	background-color: #ffb30f;
+	border:0;
+	font-family: 'nunito', sans-serif;
+	font-size: 25px;
+	color: #373e40;
+	font-weight: 900;
+}
+/**/
+#error{
+	font-size: 30px;
+	color: #ffffff;
+}
+#center-table{
+	text-align:center;
+}
+/*Results table styling*/
+/*give the table a single border, a maximum width and with table-layout:fixed users will be able to see the top of the table while the contents of it load.*/
+table{
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 90%;
+  table-layout: fixed;
+	display: inline-block;
+}
+/*set the background for the table's results, give border and padding.*/
+table tr {
+  background-color: rgb(255,255,255, 0.8);
+  border: 1px solid #a1b0b4;
+  padding: 10px;
+}
+/*add padding and align all the table's text centred*/
+table th,
+table td {
+  padding: 10px;
+  text-align: center;
+}
+/*style the table heads.*/
+table th {
+	font-size: 2rem;
+	color: #373e40;
+	background-color: #ffb30f;
+}
+/*style the table's results*/
+table td{
+	font-size: 2rem;
+	color: #373e40;
+}
+/*style the play link of the table*/
+table td a{
+	color: #373e40;
+}
+
+/*VOUCHERS PAGE STYLING*/
+
+/*display as grid for easier styling and responsiveness, two columns one row*/
+#vouchers-main{
+	display:grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-rows: 100%;
+	grid-gap: 20px;
+}
+/*position the voucher images on the grid*/
+#vouchers-imgs{
+	grid-row: 1/2;
+	grid-column: 1/2;
+}
+/*style the header*/
+h1{
+	font-size: 30px;
+	color: #ffffff;
+	margin: 20px 0 0 90px;
+}
+/*size the iTunes image on the vouchers, give padding to size*/
+#vouchers-imgs img{
+	max-width:120px;
+	height:auto;
+	padding: 15px  0 5px 20px;
+}
+/*give the voucher images background color, width and height*/
+#vouchers-imgs div{
+	width: 480px;
+	height: 150px;
+	background-color: rgb(255,179,15,0.8);
+	color: #ffffff;
+	margin: 40px;
+	padding: 5px;
+}
+/*float the iTunes image to the left*/
+#vouchers-imgs div img{
+	float:left;
+}
+/*align the images text to the centre, style the text*/
+#vouchers-imgs div p{
+	text-align: center;
+	color: #373e40;
+	font-size: 35px;
+}
+/*give the amount a bigger size, !important overrides any other styling for that class*/
+.pounds{
+	font-size: 55px !important;
+}
+/*Form styling*/
+/*position the form on the grid*/
+#vouchers-form{
+	grid-row: 1/2;
+	grid-column: 2/3;
+	
+}
+/*use flexbox to make the checkboxes appear in line with the label*/
+#amount-box{
+	display:flex;
+	flex-direction:row;
+}
+/*style the "voucher amount" box */
+#amount-box p{
+	background-color: #ffb30f;
+	width: 165px;
+	height: 40px;
+	font-size: 20px;
+	color: #373e40;
+	text-align:center;
+	padding-top: 5px;
+}
+/*style the amount of the checkboxes*/
+#amount-box label{
+	font-size: 20px;
+	color: #ffffff;
+	margin-left: 5px;
+	margin-top: 15px;
+}
+/*give the checkboxes a bigger size, position them so they are in line with the labels*/
+#amount-box input{
+	width: 30px;
+	height: 30px;
+	transform:translateY(10px);
+	margin-left: 18px;
+}
+/*give the input text style and size*/
+#vouchers-form input, textarea{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	padding-left: 5px;
+}
+/*the longer boxes will have certain size, give them border and margin*/
+.longer-input{
+	width: 420px;
+	height: 40px;
+	margin-top: 10px;
+	border: 2px solid #ffb30f;
+}
+/*the shorter boxes will have a certain size, give them border and margin*/
+.shorter-input{
+	width: 209px;
+	height: 40px;
+	margin-top:10px;
+	border: 2px solid #ffb30f;
+}
+/*give the text area a size*/
+#vouchers-form textarea{
+	height: 100px;
+}
+/*style the submit button*/
+#vouchers-form button{
+	width: 180px;
+	height: 40px;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	margin-top: 10px;
+	background-color: #ffb30f;
+	border: 0;
+}
+/*style the div where the confirmation message will appear, including the text*/
+#amount-confirmation{
+	font-size: 25px;
+	margin: 20px 0;
+	background-color: rgb(255,179,15,0.8);
+	color: #373e40;
+	max-width: 420px;
+	font-weight: 600;
+}
+
+/*CONTACT PAGE STYLING*/
+
+/*display the contact page as a grid, to position its elements.*/
+#contactPage{
+	display:grid;
+	grid-template-columns: repeat(2, 50%);
+	grid-template-rows: 100%;
+	grid-gap: 20px;
+}
+/*position the form on the grid, with a top margin for spacing*/
+#contact-form{
+	grid-row:1/2;
+	grid-column:1/2;
+	margin-top: 40px;
+}
+/*give the form some margin left*/
+#contact-form form{
+	margin-left: 60px;
+}
+/*position the second element on the page, give background color with opacity using rgb colour, give it sizing and display it as a grid for positioning*/
+#contact-info{
+	grid-row:1/2;
+	grid-column:2/3;
+	background-color: rgb(255,179,15,0.8); 
+	width: 450px;
+	height: 420px;
+	display:grid;
+	grid-template-columns: repeat(2,1fr);
+	grid-template-rows: repeat(4, min-content);
+	margin-top: 40px;
+}
+/*position the heading on the grid (right element)*/
+#contact-info h1{
+	grid-row: 1/2;
+	grid-column: 1/3;
+}
+/*size the icons and give margins*/
+#contact-info i{
+ font-size: 35px;
+ margin: 30px 0 0 60px;
+}
+/*style the font of the p element and give margins*/
+#contact-info p{
+font-size: 25px;
+margin: 30px 50px 0 0;
+}
+/*position the first icon on the grid*/
+.fa-map-marker-alt{
+	grid-row:2/3;
+	grid-column:1/2;
+}
+/*position the p element next to the first icon on the grid*/
+#contact-where{
+	grid-row:2/3;
+	grid-column:2/3;
+}
+/*position the second icon on the grid*/
+.fa-envelope{
+	grid-row:3/4;
+	grid-column:1/2;
+}
+/*position the p element next to second icon on the grid*/
+#contact-email{
+	grid-row:3/4;
+	grid-column:2/3;
+}
+/*position the third icon on the grid*/
+.fa-phone-alt{
+	grid-row:4/5;
+	grid-column:1/2;
+}
+/*position the p element next to the third icon on the grid*/
+#contact-phone{
+	grid-row:4/5;
+	grid-column:2/3;
+}
+/*CONTACT FORM STYLING*/
+/*style the input text*/
+ #contact-form input, textarea{
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	padding-left: 5px;
+}
+/*style the longer input boxes, size and borders*/
+.longer-input{
+	width: 420px;
+	height: 40px;
+	margin-top: 10px;
+	border: 2px solid #ffb30f;
+}
+/*style the shorter input boxes, size and borders*/
+.shorter-input{
+	width: 209px;
+	height: 40px;
+	margin-top:10px;
+	border: 2px solid #ffb30f;
+}
+/*size the text area of the form*/
+#contact-form textarea{
+	height: 100px;
+}
+/*style the submit button*/
+#contact-form button{
+	width: 180px;
+	height: 40px;
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+	margin-top: 10px;
+	background-color: #ffb30f;
+	border: 0;
+	display:block;
+}
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 1024px) {
+/*Main style responsiveness*/
+/*change footer height so imgs and texrt fits horizontally*/
+footer{
+	height: 75px;
+}
+/*clear floats, give padding top*/
+footer img{
+	padding-top: 10px;
+	float:none;
+}
+/*change font size, clear floats, align text ot centre and add padding.*/
+footer p{
+	font-size: 10px;
+	float: none;
+	text-align: center;
+	padding: 10px;
+}
+
+/*HOME PAGE RESPONSIVE*/
+/*Change div size and positioning (margins)*/
+#home-text{
+width: 300px;
+ margin-top: 100px;
+ margin-left: 10px;
+}
+/*change font size*/
+#home-text p{
+	font-size: 30px;
+}
+/*change font size and margins*/
+#home-link{
+	margin-left: 10px;
+	margin-top: 40px;
+	padding-top: 5px;
+}
+/*SEARCH PAGE*/
+	/*change the size of the search input box*/
+	#music-input{
+	width: 250px;
+}
+	/*change the size of the captions on the responsive table*/
+table caption {
+	font-size: 1.3em;
+}
+/*re-style the table heads so it doesn't appear at the top and instead on the side collapsed and better responsive.*/
+table thead {
+	border: none;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+/*display the results as a block, style the border and give margin*/
+table tr {
+	border-bottom: 3px solid #ddd;
+	display: block;
+	margin-bottom: .625em;
+}
+/*display the results as a block, style the border and align th text to the right*/
+table td {
+	border-bottom: 1px solid #ddd;
+	display: block;
+	font-size: 15px;
+	text-align: right;
+}
+/*makes the left-side table heads appear, float them to the left and style them*/
+table td::before {
+	content: attr(data-label);
+	float: left;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+}
+/*VOUCHERS PAGE RESPONSIVE*/
+/*change the grid style, so the form appears under the images*/
+#vouchers-main{
+	display:grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, 1fr);
+	grid-gap: 10px;
+}
+/*position the images on the grid*/
+#vouchers-imgs{
+	grid-row: 1/2;
+	grid-column: 1/2;
+	margin-left: -30px;
+}
+/*re-size the iTunes images*/
+#vouchers-imgs img{
+	max-width:80px;
+	padding: 0;
+}
+/*resize the voucher images*/
+#vouchers-imgs div{
+	width: 350px;
+	height: 100px;
+}
+/*change the font size on the voucher images*/
+#vouchers-imgs div p{
+	font-size: 20px;
+}
+/*change the font size on the amount on the vouchers, use !important to override the general p size*/
+.pounds{
+	font-size: 35px !important;
+}
+/*position the form on the grid when responsive*/
+#vouchers-form{
+	grid-row: 2/3;
+	grid-column: 1/2;
+	margin-bottom: 100px;
+	margin-top: -100px;
+	margin-left: 10px;
+}
+/*style the "voucher amount" box */
+#amount-box p{
+	width: 100px;
+	font-size: 15px;
+	padding-top: 0px;
+}
+/*CONTACT PAGE RESPONSIVE*/
+
+/*display the contact page as a grid, to position its elements.*/
+#contactPage{
+	display:grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(2, min-content);
+	grid-gap: 10px;
+}
+/*position the form on the grid, with a top margin for spacing*/
+#contact-form{
+	grid-row:1/2;
+	grid-column:1/2;
+}
+/*give the form some margin left*/
+#contact-form form{
+	margin-left: 10px;
+}
+/*position the second element on the page, give background color with opacity using rgb colour, give it sizing and display it as a grid for positioning*/
+#contact-info{
+	grid-row:2/3;
+	grid-column:1/2;
+	width: 340px;
+	height: 360px;
+	margin-bottom: 160px;
+	margin-left: 20px;
+}
+/*size the icons and give margins*/
+#contact-info i{
+ font-size: 25px;
+}
+/*style the font of the p element and give margins*/
+#contact-info p{
+font-size: 20px;
+}
+
+/*style the longer input boxes, size and borders*/
+.longer-input{
+	width: 350px;
+}
+/*style the shorter input boxes, size and borders*/
+.shorter-input{
+	width: 173px;
+}
+
+}

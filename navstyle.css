@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* Navigation style & responsiveness */
+/*Get rid of all padding, margin, list styling and hide any overflow */
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+}
+/* add padding to the menu links, get rid of link styling, style the font, display as block and add padding top and right. Add background color to menu for easiness to read */
+.header li a {
+  display: block;
+  padding: 20px 40px;
+  text-decoration: none;
+	font-size: 2rem;
+  color: #373e40;
+  background-color: #ffffff;
+} 
+/* on hover, add underline on menu links */
+.header li a:hover,
+.header .menu-btn:hover {
+  text-decoration:underline;
+}
+/*  float logo on the left, display as block, add padding and size */
+.header .logo {
+  display: block;
+  float: left;
+  padding: 10px 0 0 10px;
+  width: 75px; 
+  height: 50px;
+}
+/* menu */
+/* clear all floating, constrain height, add transition. Close the menu again when menu icon clicked again*/
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+/*Positions and sizes the responsive menu icon. Style the cursor as it appears on a link for the user when mouse on top on the icon*/
+.header .menu-icon {
+  cursor: pointer;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+}
+/*Styles the medium line for the responsive menu icon and adds the transition element for when it transforms into a cross when clicked.*/
+.header .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 30px;
+}
+/*Styles the top-bottom lines for the responsive menu icon and adds the transition element for when it transforms into a cross when clicked, and the cross stays there once clicked and menu is open*/
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+/*Positions the top line for the responsive menu*/
+.header .menu-icon .navicon:before {
+  top: 10px;
+}
+/*Positions the bottom line for the responsive menu*/
+.header .menu-icon .navicon:after {
+  top: -10px;
+}
+
+/* menu btn */
+/*Does not let the checkbox appear*/
+.header .menu-btn {
+  display: none;
+}
+/*Establishes the maximum height of the menu box when clicked and responsive*/
+.header .menu-btn:checked ~ .menu {
+  max-height: 300px;
+}
+/*Makes the middle line transparent so it doesn't appear when clicked, to make the cross shape*/
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+/*rotates -45 degrees the responsive menu icon so it appears as a cross*/
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+/*rotates 45 degrees the responsive menu icon so it appears as a cross*/
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+/*Continues to add the icon animation when responsive and clicked*/
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/*When the screen is bigger than 1024px, let the whole menu appear*/
+@media (min-width: 1024px) {
+  /*Float menu elements to the left of the screen, they won't appear as a block*/
+  .header li {
+    float: left;
+  }
+  /*add padding between menu elements*/
+  .header li a {
+    padding: 20px 30px;
+  }
+  /*let the menu elements float to the right when not responsive, get rid of responsiveness styling*/
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  /*If the screen is not a minimum size, the responsive menu item won't appear*/
+  .header .menu-icon {
+    display: none;
+  }
+  /*when the menu is NOT responsive, the menu items color is changed.*/
+  .header li a {
+    color: #373e40;
+  } 
+}

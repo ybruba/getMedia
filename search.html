@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" data-ng-app>
+<head>
+<meta charset="utf-8">
+<title>GetMedia Home</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Google Fonts link -->
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<!--styling-->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="navstyle.css">
+<!-- Angular CDN -->
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
+</head>
+<!-- Use the ng-controller directive to scope the body to iTunes Controller -->
+<body data-ng-controller="iTunesController">
+  <div id="container">
+<header class="header">
+  <img src="images/getMediaLogo.png" class="logo" alt="logo">
+  <input class="menu-btn" type="checkbox" id="menu-btn"/>
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="search.html">SEARCH</a></li>
+    <li><a href="vouchers.html">VOUCHERS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+</header>
+<main>
+	<div id="search-items">
+		<!--Add form, use ng-submit directive to call searchiTunes, pass the artist -->
+		<form name="search" data-ng-submit="searchiTunes(artist)">
+		<!--artist/band name required, use the ng-model directive to pass the artist name back into the controller/model -->
+			<input type="search" required placeholder="Type your search here" data-ng-model="artist" id="music-input"/>
+			<input type="submit" value="Search" id="music-Submit">&nbsp;
+		</form>
+	</div>
+<!--If there is an error on the search, show the error here -->
+	<div id="error">
+		<p>{{error}}</p>
+	</div>
+	<!--ng-show directive to decide when to show results. Here it will show the songs then there are songs to show -->
+	<div id="center-table">
+<table data-ng-show="songs">
+	<thead>
+		<tr>
+	  <th scope="col">Cover</th>
+      <th scope="col">Name</th>
+      <th scope="col">Album</th>
+	  <th scope="col">Artist</th>
+      <th scope="col">Type</th>
+      <th scope="col">Price</th>
+      <th scope="col">Preview&nbsp;</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!--ng-repeat to loop over each song on the songs list -->
+		<!--the song data is loaded into objects for easy access, and just call the attributes needed -->
+		<tr data-ng-repeat="song in songs">
+			<!--ng-src lets you load imgs when data is present -->
+	<td data-label="cover"><img data-ng-src="{{song.artworkUrl60}}" alt="{{song.collectionName}}"></td>
+      <td data-label="Name">{{song.trackName}}</td>
+      <td data-label="Album">{{song.collectionName}}</td>
+	   <td data-label="Artist">{{song.artistName}}</td>
+      <td data-label="Type">{{song.kind}}</td>
+      <td data-label="Price">{{song.collectionPrice}}</td>
+      <td data-label="Preview"><a href="{{song.previewUrl}}" target="_blank">Play</a></td>
+		</tr>
+	</tbody>
+</table>
+</div>
+</main>
+  <footer>
+    <div id="links-footer">
+      <a href="#"><img src="images/facebok.png" alt="facebook"></a>
+      <a href="#"><img src="images/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="images/snapchat.png" alt="snapchat"></a>
+      <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+      <p>Website for educational purposes only</p>
+    </div>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

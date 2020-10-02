@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GetMedia Home</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Google Fonts link -->
+<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+<!--styling-->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="navstyle.css">
+<!--Font awesome -->
+<script src="https://kit.fontawesome.com/e132f7d32c.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container">
+<header class="header">
+  <img src="images/getMediaLogo.png" class="logo" alt="logo">
+  <input class="menu-btn" type="checkbox" id="menu-btn"/>
+  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+  <ul class="menu">
+    <li><a href="index.html">HOME</a></li>
+    <li><a href="search.html">SEARCH</a></li>
+    <li><a href="vouchers.html">VOUCHERS</a></li>
+    <li><a href="contact.html">CONTACT</a></li>
+  </ul>
+</header>
+<main id="contactPage">
+<div id="contact-form">
+    <div id="contactConfirmation"></div>
+  <h1 id="contact-h1">  Get in touch:</h1>
+
+  <form id="contact-details">
+    <input type="text" id="firstNameContact" name="firstName" 	placeholder="First Name" class="shorter-input" required>
+				
+    <input type="text" id="lastNameContact" name="lastName" placeholder="Last Name" class="shorter-input" required>
+    <br>
+    
+    <input type="email" id="emailContact" name="email" placeholder="Email Address" class="longer-input" required>
+    <br>
+    				
+    <input type="tel" name="phone" placeholder="Telephone Number"  class="longer-input" pattern="[0-9]{11}">
+    <br>
+    
+    <textarea name="comments" placeholder="Comments"  class="longer-input" required></textarea>
+  
+    <button type="submit" id="submitFormContact">Submit</button>
+  </form>
+</div>
+
+<div id="contact-info">
+  <h1 id="contactInfo-h1">You can also find us here:</h1>
+      <i class="fas fa-map-marker-alt"></i>
+      <p id="contact-where"> 123 Street Name,<br>PO1 2ST<br>City</p>
+  <br>
+      <i class="fas fa-envelope"></i>
+      <p id="contact-email">info@getMedia.co.uk</p>
+  <br>
+      <i class="fas fa-phone-alt"></i>
+      <p id="contact-phone">141 112 112</p>
+
+</div>
+</main>
+  <footer>
+    <div id="links-footer">
+      <a href="#"><img src="images/facebok.png" alt="facebook"></a>
+      <a href="#"><img src="images/twitter.png" alt="twitter"></a>
+      <a href="#"><img src="images/snapchat.png" alt="snapchat"></a>
+      <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+      <p>Website for educational purposes only</p>
+    </div>
+  </footer>
+</div>
+<script>
+  /*when the user submits the form, the function is called*/
+  document.getElementById('submitFormContact').addEventListener('click', function(){
+	contactPageConfirmation();
+});
+/*the function grabs the first name input and the email address, and assigns them to variables. The variables are used to personalise the alert message . When the form is submitted, it resets its inputs.*/
+function contactPageConfirmation(){
+  const firstNameContact = document.getElementById('firstNameContact').value;
+	const emailContact = document.getElementById('emailContact').value;
+	if((firstNameContact != "") &&(emailContact != "")){
+	alert(`Thanks for your message, ${firstNameContact}! We will be in touch with you on ${emailContact} within 2 working days.`);
+  	/*reset the input of the form once submitted*/
+	document.getElementById('contact-details').reset();
+	}
+	else{
+		alert("Please tell us your name and e-mail before submitting the form!");
+	}
+
+}
+
+</script>
+</body>
+</html>
